@@ -11286,3 +11286,56 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+
+
+.vanites-login-wrapper .vanites-login-logo-wrapper{
+
+display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.vanites-login-wrapper .vanites-login-form-wrapper{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.vanites-login-wrapper .vanites-login-form-wrapper{
+  
+  background: #000000;
+}
+
+.vanites-login-form-wrapper form{
+  width: 78%;
+    margin: 0 auto;
+    background: #ffffff59;
+    padding: 40px;
+    border: 0;
+    border-radius: 10px;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.47) 0%, rgba(177, 177, 177, 0.24) 100%);
+
+}
+
+
+.vanites-login-wrapper .all_write_reserved {
+  color: #fff;
+  padding: 10px;
+}
+
+.vanites-login-wrapper .input-group-append .input-group-text, .input-group-prepend .input-group-text {
+  border-color: #E4E6F6;
+  padding: -0.125rem 0.75rem;
+  color: #666666;
+  /* padding: 0px; */
+  padding: 10px 17px;
+}
+
+.vanites-login-btn .btn-for-login {
+  color: #fff;
+  background-color: #8A5E3B;
+  border-color: #8A5E3B;
+}
