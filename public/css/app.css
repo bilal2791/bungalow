@@ -11305,7 +11305,7 @@ display: flex;
 }
 
 .vanites-login-wrapper .vanites-login-form-wrapper{
-  
+
   background: #000000;
 }
 
@@ -11366,7 +11366,7 @@ color:#ffffff;
 #reset_password{
   height: 100vh;
   align-items: center;
-  
+
 }
 #reset_password .card {
   background-color: #000000;
@@ -11383,8 +11383,29 @@ color:#ffffff;
  /*sidebar  */
 
 
-#sidbar{
+#sidebar{
   background: #01dddd;
   height: 100vh;
 
 }
+#sidebar nav{
+    position: relative;
+}
+#sidebar nav ul{
+    position: relative;
+    padding: 0;
+}
+#sidebar nav ul li{
+    list-style: none;
+    padding: 0.5rem 0rem;
+}
+#sidebar nav ul li a{
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+}
+#sidebar nav ul li a i{
+    padding: 0rem 0.4rem 0rem 1rem;
+    margin: 0rem 0.4rem 0rem 1rem;
+}
+
