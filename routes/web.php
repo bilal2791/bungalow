@@ -1,5 +1,5 @@
 <?php
-////////////---------------update from git------------///////////////////
+/////////////----test----------//
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,9 +36,17 @@ Route::delete('customer/delete/{id}', [App\Http\Controllers\CustomersController:
 ////////////---------------end customer routes------------///////////////////
 
 
+
+Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
+Route::POST('/product/store', [App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
+
+
+
+
 ////////////---------------Desuignatuion routes------------///////////////////
 Route::get('/designation', [App\Http\Controllers\DesignationsController::class, 'index'])->name('designation');
 Route::POST('/designation/store', [App\Http\Controllers\DesignationsController::class, 'store'])->name('designation.store');
+
 ////////////---------------end Desuignatuion routes------------///////////////////
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
