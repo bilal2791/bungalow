@@ -11378,3 +11378,13 @@ color:#ffffff;
 #reset_password  .card-header{
   color: white;
 }
+
+
+ /*sidebar  */
+
+
+#sidbar{
+  background: #01dddd;
+  height: 100vh;
+
+}

@@ -51,3 +51,5 @@ Route::POST('/designation/store', [App\Http\Controllers\DesignationsController::
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //Route::get('/includes.head', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/crm',[App\Http\Controllers\CrmmodelController::class,'index'])->name('crm');
