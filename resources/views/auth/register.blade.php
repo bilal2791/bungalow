@@ -1,14 +1,15 @@
-@extends('layouts.app')
+@extends('layouts.appnew')
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+            <div>
+            <div class="register_heading">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                <div class="custom-register-wrapper">
+ 
+                    <form method="POST" action="{{ route('register') }}" class="cutsom_register">
                         @csrf
 
                         <div class="row mb-3">
@@ -69,7 +70,7 @@
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                         @enderror
                             </div>
                         </div>
 
@@ -86,6 +87,7 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+                                <a href="{{route('login')}}" class="text-decoration-none text-white">Login</a>
                             </div>
                         </div>
                     </form>

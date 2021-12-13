@@ -11339,3 +11339,42 @@ display: flex;
   background-color: #8A5E3B;
   border-color: #8A5E3B;
 }
+.cutsom_register{
+  background: #000000;
+border-radius: 10px;
+  padding:30px 10px;
+  width: 100%;
+}
+.register_heading{
+  text-align: center;
+padding-top: 20px;
+ font-size: 30px;
+
+}
+.cutsom_register label{
+color:#ffffff;
+}
+
+.custom-register-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  width: 100%;
+}
+
+#reset_password{
+  height: 100vh;
+  align-items: center;
+  
+}
+#reset_password .card {
+  background-color: #000000;
+  border-radius: 10px;
+}
+#reset_password label{
+  color: white;
+}
+#reset_password  .card-header{
+  color: white;
+}
