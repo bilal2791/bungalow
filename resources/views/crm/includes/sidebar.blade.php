@@ -15,7 +15,7 @@
               <li>
                 <a class="" href="{{route('customer')}}">
                     <i class="fa fa-star" aria-hidden="true"></i>
-                    <span class="menu-title">Salim Customer</span>
+                    <span class="menu-title"> Customer</span>
                 </a>
               </li>
 
@@ -25,6 +25,15 @@
                     <span class="menu-title">Category</span>
                 </a>
               </li>
+
+              <li>
+                <a class="" href="{{route('designation')}}">
+                    <i class="fal fa-boxes-alt " aria-hidden="true"></i>
+                    <span class="menu-title">Designation</span>
+                </a>
+              </li>
+
+
               <li>
                 <a class="" href="">
                     <i class="fa fa-bars" aria-hidden="true"></i>
