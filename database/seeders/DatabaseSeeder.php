@@ -18,8 +18,11 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call([
         //    ShopSeeder::class,
-         
+
         // ]);
-         \App\Models\Shop::factory(100)->create();
+
+        // \App\Models\Shop::factory(100)->create();
+        // \App\Models\Employee::factory(100)->create();
+         \App\Models\Customer::factory(500)->create();
     }
 }
