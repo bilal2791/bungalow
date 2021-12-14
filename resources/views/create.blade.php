@@ -1,13 +1,14 @@
-@extends('layouts.app')
+@extends('crm.layouts.crmapp')
+
 
 @section('content')
-<div class="container">
 
 
-
-<div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
+<div class="row justify-content-center bg-white shadow mt-4 mx-3 pb-3 py-4">
+    <div class="col-lg-11">
+        <div class="custom_table_for_data">
+           
+            <div class="card ">
                 <div class="card-header">{{ __('Create Customer') }}</div>
 
                 <div class="card-body">
@@ -392,8 +393,7 @@
             </div>
         </div>
     </div>
-
-
-
 </div>
+
+
 @endsection
