@@ -1,14 +1,15 @@
- @extends('layouts.app')
+@extends('crm.layouts.crmapp')
 
 
 @section('content')
 
- <!-- Page content -->
 
- <div class="container">
-    <div class="row justify-content-center">
-
-        <div class="col-md-8">
+<div class="row justify-content-center bg-white shadow mt-4 mx-3 pb-3">
+    <div class="col-lg-11">
+        <div class="custom_table_for_data">
+            <div class="col-lg-12 py-3">
+               
+            </div>
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -25,4 +26,6 @@
         </div>
     </div>
 </div>
+
+
 @endsection
