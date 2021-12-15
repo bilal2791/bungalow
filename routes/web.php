@@ -19,9 +19,7 @@ Route::get('/', function () {
 });
 
 
-// Route::get('/customer', function () {
-//     return view('customer');
-// });
+Route::get('/productitems', [App\Http\Controllers\ProductItemController::class, 'index'])->name('productitems');
 
 
 ////////////---------------customer routes------------///////////////////
@@ -38,7 +36,9 @@ Route::delete('customer/delete/{id}', [App\Http\Controllers\CustomersController:
 
 
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
+
 Route::POST('/product/store', [App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
+
 
 
 

@@ -16,7 +16,7 @@
 
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.php"><i class="fas fa-bars navbar-menu"></i>Home </a>
+                        <a class="nav-link active" href="{{route('productitems')}}"><i class="fas fa-bars navbar-menu"></i>Home </a>
                     </li>
 
                     <li class="nav-item dropdown has-megamenu">
@@ -241,9 +241,9 @@
                     <a href=""><img src="{{asset('img/bungalowltd_1.png')}}" alt="" class="img-fluid"></a>
                 </div>
 
-                {{-- <div class="logo2">
+                <div class="logo2">
                     <a href=""><img src="{{asset('img/bungalowltd_2.png')}}" alt="" class="img-fluid"></a>
-                </div> --}}
+                </div>
 
 
 
