@@ -2,6 +2,9 @@
 /////////////----test----------//
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\MainCategoryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +56,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //Route::get('/includes.head', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/crm',[App\Http\Controllers\CrmmodelController::class,'index'])->name('crm');
+Route::resource('/category', CategoryController::class);
+Route::resource('/main-category', MainCategoryController::class);
