@@ -131,7 +131,7 @@ class ProductController extends Controller
            $file = $request->file('profileimage');
            $extension = $file->getClientOriginalExtension();
            $filename = time(). '.'.$extension;
-           $file->move('iamges',$filename);
+           $file->move('images',$filename);
 
          }
        //save $product->update()
