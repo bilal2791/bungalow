@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
+use App\Models\SubCategory;
 // use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -17,7 +19,7 @@ class ProductController extends Controller
     {
        $products=Product::latest()->paginate(5);
        // dd($customers);
-       return view('product',compact('products'))->with('1',(request()->input('page',1)-1) * 5);
+       return view('crm.Product.product',compact('products'))->with('1',(request()->input('page',1)-1) * 5);
 
     }
 
@@ -28,6 +30,9 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $category = Category::all();
+        $subcategory = SubCategory::all();
+        return view('crm.Product.create',['category'=>$category,'subcategory'=>$subcategory]);
 
     }
 
@@ -50,12 +55,13 @@ class ProductController extends Controller
          //getClientMimeType
          //getMimeType
          //getError
-
-
+         $cat = $request->category_id;
+         $subcat = $request->subcategory_id;
        $request->validate([
               'name'=>'required',
               'price'=>'required|integer|min:0',
-              'productImage'=>'required|mimes:png,jpg,jpeg|max:5048'
+              'productImage'=>'required|mimes:png,jpg,jpeg|max:5048',
+              'slug' => 'required'
        ]);
 
        $newImageName = time() . '-' .$request->name . '.' .
@@ -65,12 +71,17 @@ class ProductController extends Controller
 
 
        $product=Product::create([
-
+          
+      
           'name' =>$request->input('name'),
           'title' =>$request->input('title'),
           'price' =>$request->input('price'),
+          'slug' =>$request->input('slug'),
           'description'=>$request->input('description'),
-          'image'=>$newImageName
+           'image'=>$newImageName,
+          'category_id'=>$cat,
+          'subcategory_id',$subcat,
+          'subcategory_id',$subcat,
 
 
        ]);
