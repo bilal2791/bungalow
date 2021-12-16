@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+// use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\File;
 class ProductController extends Controller
 {
     /**
@@ -14,9 +15,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-       $product= Product::all();
+       $products=Product::latest()->paginate(5);
+       // dd($customers);
+       return view('product',compact('products'))->with('1',(request()->input('page',1)-1) * 5);
 
-       return view('product');
     }
 
     /**
@@ -108,8 +110,22 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+         if($request->hasFile('image'))
+         {
+            $destination = 'images/test.png';
+            if(File::exists($destination))
+            {
+                File::delete($destination);
+            }
+           $file = $request->file('profileimage');
+           $extension = $file->getClientOriginalExtension();
+           $filename = time(). '.'.$extension;
+           $file->move('iamges',$filename);
+
+         }
+       //save $product->update()
+       //redirect
+        }
 
     /**
      * Remove the specified resource from storage.

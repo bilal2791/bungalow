@@ -9,13 +9,12 @@ class Designation extends Model
 {
     use HasFactory;
 
-   protected $tale="designations";
+    protected $tale="designations";
 
     protected $fillable=['title'];
 
     public function customers(){
-
-        return $this->belongsTo(Customer::class);
+          return $this->belongsTo(Customer::class);
     }
 
 }
