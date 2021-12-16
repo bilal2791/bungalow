@@ -7,11 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-    use HasFactory;
 
-   
+    use HasFactory;
+    protected $table="categories";
+    // protected $guarded = [];
+    protected $fillable =['name','MainCategory_id'];
+
     public function main_categories(){
 
-        return $this->belongsTo(MainCategory::class);
+      return $this->belongsTo(MainCategory::class ,'MainCategory_id');
+
     }
+
+
+
+
+
 }

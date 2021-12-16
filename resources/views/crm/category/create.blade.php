@@ -14,7 +14,7 @@
         <div class="row mb-3">
             <label for="name" class="col-md-4 col-form-label text-md-right">Select Main Category</label>
              <div class="col-md-6">
-            <select class="form-control" name="main_category">
+            <select class="form-control" name="MainCategory_id">
                 <option>Select Main Category</option>
                 <option value="1">Lights</option>
 
@@ -35,7 +35,7 @@
                        <div class="row mb-3">
                            <div class="col-lg-4"></div>
                            <div class="col-lg-4">
-                           <input type="submit" name="submit" value="Add Category" class="btn btn-success"/>
+                           <input type="submit"  value="Add Category" class="btn btn-success"/>
 </div>
 </div>
                     </form>

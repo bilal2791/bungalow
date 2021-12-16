@@ -13,7 +13,12 @@ class MainCategory extends Model
 
     public function categories()
     {
-
-      return $this->hasMany(Category::class,'id', 'MainCategory_id');
+       return $this->hasMany(Category::class, 'MainCategory_id');
+    //    return $this->belongsTo(Category::class);
+       // return $this->hasMany(Category::class,'id', 'MainCategory_id');
     }
+
+
+
+
 }

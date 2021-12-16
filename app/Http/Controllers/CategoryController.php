@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
         $category = Category::all();
         // dd($category);
-        return view('crm.category.index');
+        return view('crm.category.index',compact('category'));
     }
 
     /**
@@ -40,8 +40,10 @@ class CategoryController extends Controller
     {
         // return view('crm.category.create');
         $category = $request->all();
-        dd($category);
+
         Category::create($category);
+        return redirect()->route('category.index')
+        ->with('success','ategory  Added  successfully.');
     }
 
     /**

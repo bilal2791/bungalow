@@ -15,26 +15,24 @@
           <table id="custom_table" class="display" cellspacing="0" width="100%">
 
                 <tr>
-                    <th>Name</th>
-                    <th>Designation</th>
-                    <th>Country</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Address</th>
-                    <th>Show</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                    <th>ID</th>
+                    <th>Main Category</th>
+                   <th>Category</th>
 
                 </tr>
-   
 
+                @foreach ($category as $cat )
 
-                  </td>
+                <tr>
+                    <td>{{ $cat->id }}</td>
+                     <td>{{ $cat->main_categories->name }}</td>
+                      <td>{{ $cat->name }}</td>
+
                 </tr>
-           
-            
+               @endforeach
+
             </table>
-       
+
         </div>
     </div>
 </div>

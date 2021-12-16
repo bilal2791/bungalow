@@ -13,6 +13,7 @@ class CreateMainCategoriesTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('main_categories');
         Schema::create('main_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
@@ -27,6 +28,6 @@ class CreateMainCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('main_categories');
+      //  Schema::dropIfExists('main_categories');
     }
 }
