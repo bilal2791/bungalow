@@ -10,9 +10,19 @@ class Product extends Model
 
     use HasFactory;
 
-    protected $table = 'products';
 
-    protected $primaryKey= 'id';
 
-    protected $fillable  = ['name','title','price','image'];
+    protected $guarded= [];
+
+   //product
+    public function category_product(){
+
+        return $this->belongsTo(Category::class, 'category_id');
+    }
+
+    public function subcategory_product(){
+
+        return $this->belongsTo(SubCategory_id::class, 'subcategory_id');
+    }
+
 }

@@ -42,7 +42,7 @@ Route::delete('customer/delete/{id}', [App\Http\Controllers\CustomersController:
 Route::get('/product', [App\Http\Controllers\ProductController::class, 'index'])->name('product');
 
 Route::POST('/product/store', [App\Http\Controllers\ProductController::class, 'store'])->name('product.store');
-
+Route::get('/product/create',[App\Http\Controllers\ProductController::class, 'create'])->name('product.create');
 
 
 
