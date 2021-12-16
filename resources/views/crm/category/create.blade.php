@@ -6,7 +6,7 @@
 
 <div class="row justify-content-center bg-white shadow mt-4 mx-3 pb-3">
     <div class="col-lg-11">
-<form method="POST" action="{{}}" class="my-4">
+<form method="POST" action="{{route('category.store')}}" class="my-4">
  @csrf
     <div class="row mb-3">
 
@@ -20,6 +20,7 @@
 
             </select>
             </div>
+
 </div>
 
  <div class="row mb-3">
@@ -30,7 +31,7 @@
                 </div>
 
             </div>
-                       </div></div>
+                       </div>
                        <div class="row mb-3">
                            <div class="col-lg-4"></div>
                            <div class="col-lg-4">
