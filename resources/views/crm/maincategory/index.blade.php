@@ -22,39 +22,39 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Edit</th>
-                    <th>Show</th>
-                    <th>Delete</th>
-                  
+                    <th class="">Action</th>
+
+
 
                 </tr>
-   
+
                 @foreach($mainCategory as $maincat)
                 <tr>
                 <th>{{$maincat->id}}</th>
                 <th>{{$maincat->name}}</th>
-                <th><a href="{{route('main-category.edit',$maincat->id)}}" class="btn btn-primary">Edit</a></th>
-                <th><a href="{{route('main-category.show',$maincat->id)}}" class="btn btn-success">Show</a></th>
                 <th>
-                <form action="{{ route('main-category.destroy', $maincat->id)}}" method="post">
+                <a href="{{route('main-category.edit',$maincat->id)}}" class="btn btn-primary">Edit</a>
+                <a href="{{route('main-category.show',$maincat->id)}}" class="btn btn-success">Show</a>
+
+                <form action="{{ route('main-category.destroy', $maincat->id)}}" method="post" class="d-inline">
                   @csrf
                   @method('DELETE')
-                  {{}}
+
                   <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
             </th>
-             
-            
+
+
                 </tr>
 
                 @endforeach
 
-                
-           
-           
-            
+
+
+
+
             </table>
-       
+
         </div>
     </div>
 </div>
