@@ -16,7 +16,7 @@
              <div class="col-md-6">
             <select class="form-control" name="SubCategory_id">
               
-                <option>Select Sub Category</option>
+                <option>Select Category Category</option>
                 @foreach($subcategory as $cat)
                 <option value="{{$cat->id}}">{{$cat->name}}</option>
 

@@ -16,7 +16,7 @@
 
                 <tr>
                     <th>ID</th>
-                    <th>Main Category</th>
+                    <th> Category</th>
                    <th>Category</th>
 
                 </tr>
