@@ -15,9 +15,12 @@
             <label for="name" class="col-md-4 col-form-label text-md-right">Select Main Category</label>
              <div class="col-md-6">
             <select class="form-control" name="MainCategory_id">
+              
                 <option>Select Main Category</option>
-                <option value="1">Lights</option>
+                @foreach($category as $cat)
+                <option value="{{$cat->id}}">{{$cat->name}}</option>
 
+                    @endforeach
             </select>
             </div>
 

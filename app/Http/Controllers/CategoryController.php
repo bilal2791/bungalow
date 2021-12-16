@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Customer;
 use Illuminate\Http\Request;
-
+use App\Models\MainCategory;
 class CategoryController extends Controller
 {
     /**
@@ -27,7 +27,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('crm.category.create');
+        $category = MainCategory::all();
+        return view('crm.category.create',compact('category'));
     }
 
     /**
