@@ -35,6 +35,14 @@
               </li>
 
               <li>
+                <a class="" href="{{route('subcategory.index')}}">
+                    <i class="fal fa-boxes-alt " aria-hidden="true"></i>
+                    <span class="menu-title">Sub Category</span>
+                </a>
+              </li>
+
+
+              <li>
                 <a class="" href="{{route('designation')}}">
                     <i class="fal fa-boxes-alt " aria-hidden="true"></i>
                     <span class="menu-title">Designation</span>

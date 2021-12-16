@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Designations extends Migration
+class CreateSubCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,16 @@ class Designations extends Migration
      */
     public function up()
     {
-     
-        Schema::create('designations', function (Blueprint $table) {
+        Schema::create('sub_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->unsignedBigInteger('SubCategory_id')->nullable();
+            $table->string('name');
             $table->timestamps();
+            $table->foreign('SubCategory_id')->references('id')->on('sub_categories');
+          
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -27,6 +30,6 @@ class Designations extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('designations');
+        Schema::dropIfExists('sub_categories');
     }
 }
