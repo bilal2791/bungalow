@@ -1,15 +1,15 @@
       <nav>
           <ul>
               <li>
-                <a class="" href="">
+                <a class="" href="{{route('home')}}">
                 <i class="fa fa-home" aria-hidden="true"></i>
                     <span class="menu-title">Home</span>
                 </a>
               </li>
               <li>
-                <a class="" href="">
+                <a class="" href="{{route('product')}}">
                     <i class="fa fa-star" aria-hidden="true"></i>
-                    <span class="menu-title">product</span>
+                    <span class="menu-title">Product</span>
                 </a>
               </li>
 
