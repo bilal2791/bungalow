@@ -14,7 +14,7 @@ class Designation extends Model
     protected $fillable=['title'];
 
     public function customers(){
-          return $this->belongsTo(Customer::class);
+       return $this->belongsTo(Customer::class);
     }
 
 }
