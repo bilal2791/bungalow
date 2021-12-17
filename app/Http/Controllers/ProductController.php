@@ -72,7 +72,6 @@ class ProductController extends Controller
 
        $product=Product::create([
 
-
           'name' =>$request->input('name'),
           'title' =>$request->input('title'),
           'price' =>$request->input('price'),
