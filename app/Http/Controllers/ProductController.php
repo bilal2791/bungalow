@@ -71,8 +71,8 @@ class ProductController extends Controller
 
 
        $product=Product::create([
-          
-      
+
+
           'name' =>$request->input('name'),
           'title' =>$request->input('title'),
           'price' =>$request->input('price'),
@@ -80,8 +80,8 @@ class ProductController extends Controller
           'description'=>$request->input('description'),
            'image'=>$newImageName,
           'category_id'=>$cat,
-          'subcategory_id',$subcat,
-          'subcategory_id',$subcat,
+          'subcategory_id'=>$subcat,
+
 
 
        ]);

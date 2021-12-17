@@ -69,7 +69,7 @@
                     <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Select Category') }}</label>
 
                     <div class="col-md-6">
-                        
+
                     <select class="category form-control" name="category_id">
                         <option>Select Category</option>
                         @foreach($category as  $cat)
@@ -89,8 +89,8 @@
                     <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Select Category') }}</label>
 
                     <div class="col-md-6">
-                        
-                    <select class="category form-control" name="SubCategory">
+
+                    <select class="category form-control" name="subcategory_id">
                         <option>Select SubCategory</option>
                         @foreach($subcategory as  $cat)
                         <option value="{{$cat->id}}">{{$cat->name}}</option>

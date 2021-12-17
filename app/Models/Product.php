@@ -17,12 +17,12 @@ class Product extends Model
    //product
     public function category_product(){
 
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(Category::class);
     }
 
     public function subcategory_product(){
 
-        return $this->belongsTo(SubCategory_id::class, 'subcategory_id');
+        return $this->belongsTo(SubCategory_id::class);
     }
 
 }
