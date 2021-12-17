@@ -19,6 +19,8 @@
                     <th>Name</th>
                     <th>Price</th>
                     <th>Title</th>
+                    <th>Category</th>
+                    <th>Sub Category</th>
                     <th>Image</th>
                      <th>Show</th>
                     <th>Edit</th>
@@ -30,7 +32,9 @@
                 <tr>
                     <td>{{ $product->name }}</td>
                     <td>{{ $product->price; }}</td>
-                    <td>{{ $product->title }}</td>
+                    <td>{{ $product->title }}</td> 
+                    <td>{{ $product->category_product->name }}</td>
+                    <td>{{ $product->subcategory_product->name }}</td>
                     <td><img src="/images/{{ $product->image }}" class="img-fluid" height="85" width="85"></td>
 
                     <td>  <a href="" class="btn btn-info">Show</a> </td>
