@@ -187,7 +187,7 @@
 
     <div class="col-md-6">
 
-    <select class="category form-control" name="category_id">
+    <select class="category form-control" name="category_id" id="select_varients">
         <option>Select Attributes</option>
         @foreach($ProductAttribute as  $ProductAttribute)
         <option value="{{$ProductAttribute->id}}">{{$ProductAttribute->name}}</option>
@@ -200,10 +200,34 @@
             </span>
         @enderror
     </div>
+
+    <div class="col-md-2">
+        <button class="btn btn-primary" id="addattributes" style="display:none;">Add Attributes</button>
+    </div>
+
+<!-- Group  -->
+
+
+
 </div>
 
 
+<!-- end  -->
+
+
+</div>
+
+<!-- append row  -->
+<div class="row justify-content-center pb-3" id="new_attribute" style="display:none;">
+
+</div>
+
+<!-- end of append roew  -->
+
+
   </div>
+
+
 
 
 
@@ -228,6 +252,8 @@
    
         $("#simpleproduct").show();
         $("#productvart").hide();
+        $("#new_attribute").hide();
+        
 
       }
       else if($("#productselection").val() == 1)
@@ -235,6 +261,7 @@
 
         $("#simpleproduct").show();
         $("#productvart").hide();
+        $("#new_attribute").hide();
       }
 
       else if($("#productselection").val() == 2)
@@ -242,11 +269,46 @@
       
         $("#simpleproduct").hide();
         $("#productvart").show();
+        $("#new_attribute").show();
       }
 
     });
 
+    // $("#addattributes").click(function(){
+    //     alert("Hello");
+    // })
 
 
+
+    var counterTwo = 0;
+$("#addattributes").click(function () {
+    var html = '';
+ 
+
+    html += '<div class="col-md-11">';
+    html += '<div class="row">';
+    html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
+    html += '{{ __("Enter Attribute Varient") }}';
+    html += '</label>';
+
+    html += '<div class="col-md-6">';
+    html += '<input id="varient" type="text" class="form-control my-3" name="varient" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+    html += '</div>';
+    html += '</div>';
+
+    counterTwo++;
+
+    $('#new_attribute').append(html);
+});
+
+
+
+//select varients
+$("#select_varients").change(function(){
+  
+   $("#new_attribute").show();
+   $("#addattributes").show();
+});
   });
 </script>
