@@ -9,7 +9,7 @@
 <div class="col-md-4 py-3">
 <select class="form-control" id="product-selection">
 
-  
+
 <option value="0">Select Product Type</option>
 <option value="1">Simple Product</option>
 <option value="2">Add Product Varaitions</option>
@@ -23,7 +23,7 @@
 
 
 
-  
+
 
 
 
@@ -180,7 +180,7 @@
 
 
 </form>
-  
+
 
 <div class="row mb-3" id="productvart" style="display:none">
     <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Select Attribute') }}</label>
@@ -221,17 +221,20 @@
 
 $('#product-selection').on('change', function() {
 
+ var product_value = $("#product-selection").val()
 
-    if(("#product-selection").val() == 0){
+    if(product_value == 0){
+        alert("0 value");
         $("#simple-product").show();
         $("#productvart").hide();
     }
 
-else if(("#product-selection").val() == 1){
-
+else if(product_value == 1){
+ alert("1 value");
     $("#simple-product").show();
 }
-else if(("#product-selection").val() == 2)
+else if(product_value == 2)
+ alert("2 value");
 $("#productvart").hide();
 
  });
