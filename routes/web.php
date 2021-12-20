@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\SubCategoryController;
+use App\Http\Controllers\ProductAttributeController;
 
 
 /*
@@ -61,3 +62,8 @@ Route::get('/crm',[App\Http\Controllers\CrmmodelController::class,'index'])->nam
 Route::resource('/category', CategoryController::class);
 Route::resource('/main-category', MainCategoryController::class);
 Route::resource('/subcategory',SubCategoryController::class);
+Route::resource('/product-attribute',ProductAttributeController::class);
+
+
+
+

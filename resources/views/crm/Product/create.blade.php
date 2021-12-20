@@ -6,32 +6,31 @@
 
 <div class="row justify-content-center bg-white shadow mt-4 mx-3 pb-3">
 
+<div class="col-md-4 py-3">
+<select class="form-control" id="product-selection">
 
-
-
-    <div class="col-lg-11">
-
-
-
-
-
-
-    <ul class="nav nav-pills mb-3 d-flex justify-content-center align-items-center py-3" id="pills-tab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Add Products</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Add Product Attribute</button>
-  </li>
   
-</ul>
+<option value="0">Select Product Type</option>
+<option value="1">Simple Product</option>
+<option value="2">Add Product Varaitions</option>
 
 
-<div class="tab-content" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+</select>
+</div>
 
 
-  <form method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data">
+    <div class="col-lg-11 ">
+
+
+
+  
+
+
+
+
+
+
+  <form id="simple-product" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data" class="py-3">
 
 @csrf
 
@@ -85,8 +84,9 @@
 <div class="row mb-3">
     <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Select Category') }}</label>
 
-    <div class="col-md-6">
 
+    <div class="col-md-6">
+    <h6>Select Product Type</h6>
     <select class="category form-control" name="category_id">
         <option>Select Category</option>
         @foreach($category as  $cat)
@@ -94,6 +94,7 @@
 
         @endforeach
     </select>
+
         @error('category_id')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
@@ -101,6 +102,7 @@
         @enderror
     </div>
 </div>
+
 
 <div class="row mb-3">
     <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Select Category') }}</label>
@@ -164,6 +166,9 @@
 
 
 
+
+
+
 <div class="row mb-0">
     <div class="col-md-6 offset-md-4">
         <button type="submit" class="btn btn-primary">
@@ -176,37 +181,30 @@
 
 </form>
   
-  </div>
 
-  <!-- Product Variations  -->
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-
-  <div class="row mb-3">
-    <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Product Attribute') }}</label>
+<div class="row mb-3" id="productvart" style="display:none">
+    <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Select Attribute') }}</label>
 
     <div class="col-md-6">
-    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="price" autofocus>
-    @error('name')
+
+    <select class="category form-control" name="category_id">
+        <option>Select Attributes</option>
+        @foreach($ProductAttribute as  $ProductAttribute)
+        <option value="{{$ProductAttribute->id}}">{{$ProductAttribute->name}}</option>
+
+        @endforeach
+    </select>
+        @error('ProductAttribute')
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $message }}</strong>
             </span>
         @enderror
     </div>
-
-    
-
-    <div class="row my-3">
-    <div class="col-md-12  text-center ">
-        <button type="submit" class="btn btn-primary ">
-            {{ __('Add Attriubtes') }}
-        </button>
-    </div>
 </div>
 
-</div>
-</div>
-</div>
-</div>
+
+  </div>
+
 
 
 
@@ -215,3 +213,28 @@
     </div>
 
 @endsection
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function (e) {
+
+$('#product-selection').on('change', function() {
+
+
+    if(("#product-selection").val() == 0){
+        $("#simple-product").show();
+        $("#productvart").hide();
+    }
+
+else if(("#product-selection").val() == 1){
+
+    $("#simple-product").show();
+}
+else if(("#product-selection").val() == 2)
+$("#productvart").hide();
+
+ });
+
+  });
+</script>

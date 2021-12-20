@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
+use App\Models\ProductAttribute;
 // use Facade\FlareClient\Stacktrace\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -32,7 +33,8 @@ class ProductController extends Controller
     {
         $category = Category::all();
         $subcategory = SubCategory::all();
-        return view('crm.Product.create',['category'=>$category,'subcategory'=>$subcategory]);
+        $ProductAttribute = ProductAttribute::all();
+        return view('crm.Product.create',['category'=>$category,'subcategory'=>$subcategory,'ProductAttribute'=>$ProductAttribute]);
 
     }
 

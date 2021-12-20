@@ -6,12 +6,20 @@
                     <span class="menu-title">Home</span>
                 </a>
               </li>
-              <li>
+              <li id="product_id">
                 <a class="" href="{{route('product')}}">
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <span class="menu-title">Product</span>
                 </a>
               </li>
+
+              <li id="product_id">
+                <a class="" href="{{route('product-attribute.index')}}">
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <span class="menu-title">Product Attributes</span>
+                </a>
+              </li>
+
 
               <li>
                 <a class="" href="{{route('main-category.index')}}">
@@ -118,3 +126,5 @@
               </li>
           </ul>
       </nav>
+
+     

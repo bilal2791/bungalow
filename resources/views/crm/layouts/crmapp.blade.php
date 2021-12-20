@@ -91,6 +91,10 @@
     	"ordering": false
         });
 
+        $("#product_id").click(function(){
+                alert("The paragraph was clicked.");
+              });
+              
 	  </script>
 </body>
 </html>
