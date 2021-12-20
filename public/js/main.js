@@ -6,3 +6,7 @@ $('.home_slider').slick({
     prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fas fa-caret-left'></i></button>",
      nextArrow:"<button type='button' class='slick-next pull-right'><i class='fas fa-caret-left'></i></i></button>"
 });
+
+
+
+         
