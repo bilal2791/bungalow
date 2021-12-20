@@ -7,7 +7,7 @@
 <div class="row justify-content-center bg-white shadow mt-4 mx-3 pb-3">
 
 <div class="col-md-4 py-3">
-<select class="form-control" id="product-selection">
+<select class="form-control" id="productselection">
 
 
 <option value="0">Select Product Type</option>
@@ -30,7 +30,7 @@
 
 
 
-  <form id="simple-product" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data" class="py-3">
+  <form id="simpleproduct" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data" class="py-3">
 
 @csrf
 
@@ -217,27 +217,36 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  $(document).ready(function (e) {
+  $(document).ready(function () {
 
-$('#product-selection').on('change', function() {
 
- var product_value = $("#product-selection").val()
+    $("#productselection").change(function(){
 
-    if(product_value == 0){
-        alert("0 value");
-        $("#simple-product").show();
+
+        if ($("#productselection").val() == 0)
+      {
+   
+        $("#simpleproduct").show();
         $("#productvart").hide();
-    }
 
-else if(product_value == 1){
- alert("1 value");
-    $("#simple-product").show();
-}
-else if(product_value == 2)
- alert("2 value");
-$("#productvart").hide();
+      }
+      else if($("#productselection").val() == 1)
+      {
 
- });
+        $("#simpleproduct").show();
+        $("#productvart").hide();
+      }
+
+      else if($("#productselection").val() == 2)
+      {
+      
+        $("#simpleproduct").hide();
+        $("#productvart").show();
+      }
+
+    });
+
+
 
   });
 </script>
