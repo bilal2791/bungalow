@@ -15,7 +15,6 @@ class Customer extends Model
 
     public function designations()
     {
-
       return $this->hasOne(Designation::class,'id', 'designation_id');
     }
 
