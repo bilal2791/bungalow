@@ -267,7 +267,7 @@
       else if($("#productselection").val() == 2)
       {
       
-        $("#simpleproduct").hide();
+        $("#simpleproduct").show();
         $("#productvart").show();
         $("#new_attribute").show();
       }
@@ -287,14 +287,68 @@ $("#addattributes").click(function () {
 
     html += '<div class="col-md-11">';
     html += '<div class="row">';
-    html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
-    html += '{{ __("Enter Attribute Varient") }}';
+    html += '<label for="Name" class="col-md-4 col-form-label text-md-right my-3">';
+    html += '{{ __(" Name") }}';
     html += '</label>';
 
     html += '<div class="col-md-6">';
-    html += '<input id="varient" type="text" class="form-control my-3" name="varient" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+    html += '<input id="varient" type="text" class="form-control my-3" name="varianame" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
 
     html += '</div>';
+
+    html += '<label for="price" class="col-md-4 col-form-label text-md-right my-3">';
+    html += '{{ __(" Price") }}';
+    html += '</label>';
+
+    html += '<div class="col-md-6">';
+    html += '<input id="varient" type="text" class="form-control my-3" name="price" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+    html += '</div>';
+
+
+    html += '<label for="stock" class="col-md-4 col-form-label text-md-right my-3">';
+    html += '{{ __("Stock ") }}';
+    html += '</label>';
+
+    html += '<div class="col-md-6">';
+    html += '<input id="varient" type="text" class="form-control my-3" name="stock" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+    html += '</div>';
+
+
+    html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
+    html += '{{ __("Sku") }}';
+    html += '</label>';
+
+    html += '<div class="col-md-6">';
+    html += '<input id="varient" type="text" class="form-control my-3" name="Sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+    html += '</div>';
+
+    html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
+    html += '{{ __("Image") }}';
+    html += '</label>';
+
+    html += '<div class="col-md-6">';
+    html += '<input id="varient" type="file" class="form-control my-3" name="Sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+    html += '</div>';
+
+
+    html += '<div class="col-md-12 d-flex justify-content-center">';
+    html += '<button class="btn btn-primary " style="margin-right:10px">Add More</button>';
+    html += '<button class="btn btn-success">Submit</button>';
+    html += '</div>';
+
+ 
+
+
+
+
+
+
+
+
     html += '</div>';
 
     counterTwo++;
