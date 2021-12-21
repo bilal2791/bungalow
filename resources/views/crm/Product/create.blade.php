@@ -202,7 +202,7 @@
     </div>
 
     <div class="col-md-2">
-        <button class="btn btn-primary" id="addattributes" style="display:none;">Add Attributes</button>
+        <button class="btn btn-primary" id="addattributes" style="display:none;">Add Variations</button>
     </div>
 
 <!-- Group  -->
@@ -223,6 +223,13 @@
 </div>
 
 <!-- end of append roew  -->
+
+
+<!-- append attributes  -->
+
+<div class="row justify-content-center pb-3" id="add_attrz">
+
+</div>
 
 
   </div>
@@ -287,12 +294,13 @@ $("#addattributes").click(function () {
 
     html += '<div class="col-md-11">';
     html += '<div class="row">';
-    html += '<label for="Name" class="col-md-4 col-form-label text-md-right my-3">';
-    html += '{{ __(" Name") }}';
+    html += '<h2 class="text-center py-3">Add Variations</h2>';
+    html += '<label for="Value" class="col-md-4 col-form-label text-md-right my-3">';
+    html += '{{ __(" Value") }}';
     html += '</label>';
 
     html += '<div class="col-md-6">';
-    html += '<input id="varient" type="text" class="form-control my-3" name="varianame" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+    html += '<input id="varient" type="text" class="form-control my-3" name="value" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
 
     html += '</div>';
 
@@ -330,13 +338,13 @@ $("#addattributes").click(function () {
     html += '</label>';
 
     html += '<div class="col-md-6">';
-    html += '<input id="varient" type="file" class="form-control my-3" name="Sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+    html += '<input id="varient" type="file" class="form-control my-3" name="sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
 
     html += '</div>';
 
 
-    html += '<div class="col-md-12 d-flex justify-content-center">';
-    html += '<button class="btn btn-primary " style="margin-right:10px">Add More</button>';
+    html += '<div class="col-md-12 d-flex justify-content-center" id="btn-dd">';
+    html += '<button class="btn btn-primary add_attrs"  style="margin-right:10px">Add More Attributes</button>';
     html += '<button class="btn btn-success">Submit</button>';
     html += '</div>';
 
@@ -354,9 +362,12 @@ $("#addattributes").click(function () {
     counterTwo++;
 
     $('#new_attribute').append(html);
+    $("#addattributes").hide();
 });
 
 
+
+   
 
 //select varients
 $("#select_varients").change(function(){
@@ -372,5 +383,106 @@ $("#select_varients").change(function(){
    $("#addattributes").show();
 }
 });
+
   });
+
+
+  
+  
+
+$(document).on('click', '.add_attrs', function() {
+
+    var html1 = '';
+ 
+
+html1 += '<div class="row mb-3" id="productvart" >';
+html1 += '<label for="title" class="col-md-4 col-form-label text-md-right">{{ __("Select Another Attribute") }}</label>';
+html1 += '<div class="col-md-6">';
+html1 += '<select class="category form-control" name="category_id" id="select_varients">';
+html1 += '<option value="0">Select Attributes</option>';
+html1 += '<option value="0">asd</option>';
+html1 += '</select>';
+html1 += '</div>';
+html1 += '<div class="col-md-2">';
+html1 += '<button class="btn btn-primary" id="addattributes1" >Add Variations</button>';
+html1 += '</div>';
+html1 += '</div>';
+
+
+
+$('#add_attrz').append(html1);
+$("#btn-dd").attr( "style", "display: none !important;" )
+
+});
+
+$(document).on('click', '#addattributes1', function() {
+
+
+    var html = '';
+ 
+
+ html += '<div class="col-md-11">';
+ html += '<div class="row">';
+ html += '<label for="Value" class="col-md-4 col-form-label text-md-right my-3">';
+ html += '{{ __(" Value") }}';
+ html += '</label>';
+
+ html += '<div class="col-md-6">';
+ html += '<input id="varient" type="text" class="form-control my-3" name="value" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+ html += '</div>';
+
+ html += '<label for="price" class="col-md-4 col-form-label text-md-right my-3">';
+ html += '{{ __(" Price") }}';
+ html += '</label>';
+
+ html += '<div class="col-md-6">';
+ html += '<input id="varient" type="text" class="form-control my-3" name="price" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+ html += '</div>';
+
+
+ html += '<label for="stock" class="col-md-4 col-form-label text-md-right my-3">';
+ html += '{{ __("Stock ") }}';
+ html += '</label>';
+
+ html += '<div class="col-md-6">';
+ html += '<input id="varient" type="text" class="form-control my-3" name="stock" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+ html += '</div>';
+
+
+ html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
+ html += '{{ __("Sku") }}';
+ html += '</label>';
+
+ html += '<div class="col-md-6">';
+ html += '<input id="varient" type="text" class="form-control my-3" name="Sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+ html += '</div>';
+
+ html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
+ html += '{{ __("Image") }}';
+ html += '</label>';
+
+ html += '<div class="col-md-6">';
+ html += '<input id="varient" type="file" class="form-control my-3" name="sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
+
+ html += '</div>';
+
+
+ html += '<div class="col-md-12 d-flex justify-content-center">';
+ html += '<button class="btn btn-primary add_attrs"  style="margin-right:10px">Add More Attributes</button>';
+ html += '<button class="btn btn-success">Submit</button>';
+ html += '</div>';
+
+
+
+ html += '</div>';
+
+
+ $('#new_attribute').append(html);
+ $("#addattributes").hide();
+
+});
 </script>
