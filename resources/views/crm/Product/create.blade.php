@@ -188,7 +188,7 @@
     <div class="col-md-6">
 
     <select class="category form-control" name="category_id" id="select_varients">
-        <option>Select Attributes</option>
+        <option value="0">Select Attributes</option>
         @foreach($ProductAttribute as  $ProductAttribute)
         <option value="{{$ProductAttribute->id}}">{{$ProductAttribute->name}}</option>
 
@@ -360,9 +360,17 @@ $("#addattributes").click(function () {
 
 //select varients
 $("#select_varients").change(function(){
-  
+    if($("#select_varients").val() == 0)
+  {
+    $("#new_attribute").hide();
+   $("#addattributes").hide();
+  }
+  else {
+
+
    $("#new_attribute").show();
    $("#addattributes").show();
+}
 });
   });
 </script>
