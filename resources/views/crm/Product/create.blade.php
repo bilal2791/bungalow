@@ -169,7 +169,7 @@
 
 
 
-<div class="row mb-0">
+<div class="row mb-0" id="create_simple">
     <div class="col-md-6 offset-md-4">
         <button type="submit" class="btn btn-primary">
             {{ __('Create') }}
@@ -257,10 +257,11 @@
 
         if ($("#productselection").val() == 0)
       {
-
+        
         $("#simpleproduct").show();
         $("#productvart").hide();
         $("#new_attribute").hide();
+        $("#create_simple").show();
 
 
       }
@@ -270,6 +271,7 @@
         $("#simpleproduct").show();
         $("#productvart").hide();
         $("#new_attribute").hide();
+        $("#create_simple").show();
       }
 
       else if($("#productselection").val() == 2)
@@ -278,6 +280,7 @@
         $("#simpleproduct").show();
         $("#productvart").show();
         $("#new_attribute").show();
+        $("#create_simple").hide();
       }
 
     });
@@ -509,6 +512,9 @@ $(document).on('change', '#select_anotherz', function() {
  
 }
 });
+
+
+
 
 
 </script>
