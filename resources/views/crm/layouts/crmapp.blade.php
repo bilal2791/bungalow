@@ -41,10 +41,10 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom"><div id="navbarSupportedContent" class="collapse navbar-collapse"><ul class="navbar-nav ms-auto"><li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle show" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     SYED ADIL SHAH<br>
                                     mohsin@gmail.com
-                                </a> <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right show" data-bs-popper="none"><a href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
+                                </a> <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right show" data-bs-popper="none"><a href="{{ route('logout.perform') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="dropdown-item">
                                         Logout
-                                    </a> <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" class="d-none"><input type="hidden" name="_token" value="2eYwBqQyTXoqFCDCBkvcW8k6iBu2dr1mrNuAegqf"></form></div></li></ul></div></nav></div>
+                                    </a> <form id="logout-form" action="{{ route('logout.perform') }}" method="POST" class="d-none"><input type="hidden" name="_token" value="2eYwBqQyTXoqFCDCBkvcW8k6iBu2dr1mrNuAegqf"></form></div></li></ul></div></nav></div>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -94,7 +94,7 @@
         $("#product_id").click(function(){
                 alert("The paragraph was clicked.");
               });
-              
+
 	  </script>
 </body>
 </html>
