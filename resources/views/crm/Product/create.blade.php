@@ -7,7 +7,7 @@
 <div class="row justify-content-center bg-white shadow mt-4 mx-3 pb-3">
 
 <div class="col-md-4 py-3">
-<select class="form-control" id="productselection">
+<select class="form-control" id="product-selection">
 
 
 <option value="0">Select Product Type</option>
@@ -30,7 +30,7 @@
 
 
 
-  <form id="simpleproduct" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data" class="py-3">
+  <form id="simple-product" method="POST" action="{{ route('product.store') }}" enctype="multipart/form-data" class="py-3">
 
 @csrf
 
@@ -183,17 +183,15 @@
 
 
 <div class="row mb-3" id="productvart" style="display:none">
-<h2 class="text-center py-3">Add Attributes</h2>
     <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Select Attribute') }}</label>
 
     <div class="col-md-6">
 
-    <select class="category form-control" name="category_id" id="select_varients">
-        <option value="0">Select Attributes</option>
+    <select class="category form-control" name="category_id">
+        <option>Select Attributes</option>
         @foreach($ProductAttribute as  $ProductAttribute)
         <option value="{{$ProductAttribute->id}}">{{$ProductAttribute->name}}</option>
-
-        @endforeach
+       @endforeach
     </select>
         @error('ProductAttribute')
             <span class="invalid-feedback" role="alert">
@@ -201,41 +199,10 @@
             </span>
         @enderror
     </div>
-
-    <div class="col-md-2">
-        <button class="btn btn-primary" id="addattributes" style="display:none;">Add Variations</button>
-    </div>
-
-<!-- Group  -->
-
-
-
-</div>
-
-
-<!-- end  -->
-
-
-</div>
-
-<!-- append row  -->
-<div class="row justify-content-center pb-3" id="new_attribute" style="display:none;">
-
-</div>
-
-<!-- end of append roew  -->
-
-
-<!-- append attributes  -->
-
-<div class="row justify-content-center pb-3" id="add_attrz">
-
 </div>
 
 
   </div>
-
-
 
 
 
@@ -249,261 +216,27 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-  $(document).ready(function () {
+$(document).ready(function (e) {
 
+$('#product-selection').on('change', function() {
 
-    $("#productselection").change(function(){
+ var product_value = $("#product-selection").val()
 
-
-        if ($("#productselection").val() == 0)
-      {
-   
-        $("#simpleproduct").show();
+    if(product_value == 0){
+        alert("0 value");
+        $("#simple-product").show();
         $("#productvart").hide();
-        $("#new_attribute").hide();
-        
+    }
 
-      }
-      else if($("#productselection").val() == 1)
-      {
-
-        $("#simpleproduct").show();
-        $("#productvart").hide();
-        $("#new_attribute").hide();
-      }
-
-      else if($("#productselection").val() == 2)
-      {
-      
-        $("#simpleproduct").show();
-        $("#productvart").show();
-        $("#new_attribute").show();
-      }
-
-    });
-
-    // $("#addattributes").click(function(){
-    //     alert("Hello");
-    // })
-
-
-
-    var counterTwo = 0;
-$("#addattributes").click(function () {
-    var html = '';
- 
-
-    html += '<div class="col-md-11">';
-    html += '<div class="row">';
-    html += '<h2 class="text-center py-3">Add Variations</h2>';
-    html += '<label for="Value" class="col-md-4 col-form-label text-md-right my-3">';
-    html += '{{ __(" Value") }}';
-    html += '</label>';
-
-    html += '<div class="col-md-6">';
-    html += '<input id="varient" type="text" class="form-control my-3" name="value" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
-    html += '</div>';
-
-    html += '<label for="price" class="col-md-4 col-form-label text-md-right my-3">';
-    html += '{{ __(" Price") }}';
-    html += '</label>';
-
-    html += '<div class="col-md-6">';
-    html += '<input id="varient" type="text" class="form-control my-3" name="price" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
-    html += '</div>';
-
-
-    html += '<label for="stock" class="col-md-4 col-form-label text-md-right my-3">';
-    html += '{{ __("Stock ") }}';
-    html += '</label>';
-
-    html += '<div class="col-md-6">';
-    html += '<input id="varient" type="text" class="form-control my-3" name="stock" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
-    html += '</div>';
-
-
-    html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
-    html += '{{ __("Sku") }}';
-    html += '</label>';
-
-    html += '<div class="col-md-6">';
-    html += '<input id="varient" type="text" class="form-control my-3" name="Sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
-    html += '</div>';
-
-    html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
-    html += '{{ __("Image") }}';
-    html += '</label>';
-
-    html += '<div class="col-md-6">';
-    html += '<input id="varient" type="file" class="form-control my-3" name="sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
-    html += '</div>';
-
-
-    html += '<div class="col-md-12 d-flex justify-content-center" id="btn-dd">';
-    html += '<button class="btn btn-primary add_attrs"  style="margin-right:10px">Add More Attributes</button>';
-    html += '<button class="btn btn-success">Submit</button>';
-    html += '</div>';
-
- 
-
-
-
-
-
-
-
-
-    html += '</div>';
-
-    counterTwo++;
-
-    $('#new_attribute').append(html);
-    $("#addattributes").hide();
-});
-
-
-
-   
-
-//select varients
-$("#select_varients").change(function(){
-    if($("#select_varients").val() == 0)
-  {
-    $("#new_attribute").hide();
-   $("#addattributes").hide();
-  }
-  else {
-
-
-   $("#new_attribute").show();
-   $("#addattributes").show();
+else if(product_value == 1){
+ alert("1 value");
+    $("#simple-product").show();
 }
-});
+else if(product_value == 2)
+ alert("2 value");
+$("#productvart").hide();
 
-
+ });
 
   });
-
-
-  
-  
-
-$(document).on('click', '.add_attrs', function() {
-
-    var html1 = '';
- 
-
-html1 += '<div class="row mb-3" id="" >';
-html1 += '<h2 class="text-center py-3">Add Attributes</h2>';
-html1 += '<label for="title" class="col-md-4 col-form-label text-md-right">{{ __("Select Another Attribute") }}</label>';
-html1 += '<div class="col-md-6">';
-html1 += '<select class="category form-control" name="category_id" id="select_anotherz">';
-html1 += '<option value="0">Select Attributes</option>';
-html1 += '<option value="1">asd</option>';
-html1 += '</select>';
-html1 += '</div>';
-html1 += '<div class="col-md-2">';
-html1 += '<button class="btn btn-primary" id="addattributes1" style="display:none" >Add Variations</button>';
-html1 += '</div>';
-html1 += '</div>';
-
-
-
-$('#add_attrz').append(html1);
-$("#btn-dd").attr( "style", "display: none !important;" )
-
-});
-
-$(document).on('click', '#addattributes1', function() {
-
-
-    var html = '';
- 
-
- html += '<div class="col-md-11">';
- html += '<div class="row">';
- html += '<h2 class="text-center py-3">Add Product Variations</h2>';
- html += '<label for="Value" class="col-md-4 col-form-label text-md-right my-3">';
- html += '{{ __(" Value") }}';
- html += '</label>';
-
- html += '<div class="col-md-6">';
- html += '<input id="varient" type="text" class="form-control my-3" name="value" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
- html += '</div>';
-
- html += '<label for="price" class="col-md-4 col-form-label text-md-right my-3">';
- html += '{{ __(" Price") }}';
- html += '</label>';
-
- html += '<div class="col-md-6">';
- html += '<input id="varient" type="text" class="form-control my-3" name="price" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
- html += '</div>';
-
-
- html += '<label for="stock" class="col-md-4 col-form-label text-md-right my-3">';
- html += '{{ __("Stock ") }}';
- html += '</label>';
-
- html += '<div class="col-md-6">';
- html += '<input id="varient" type="text" class="form-control my-3" name="stock" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
- html += '</div>';
-
-
- html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
- html += '{{ __("Sku") }}';
- html += '</label>';
-
- html += '<div class="col-md-6">';
- html += '<input id="varient" type="text" class="form-control my-3" name="Sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
- html += '</div>';
-
- html += '<label for="title" class="col-md-4 col-form-label text-md-right my-3">';
- html += '{{ __("Image") }}';
- html += '</label>';
-
- html += '<div class="col-md-6">';
- html += '<input id="varient" type="file" class="form-control my-3" name="sku" placeholder="Enter The Product Varient" required autocomplete="price" autofocus>';
-
- html += '</div>';
-
-
- html += '<div class="col-md-12 d-flex justify-content-center">';
- html += '<button class="btn btn-primary add_attrs"  style="margin-right:10px">Add More Attributes</button>';
- html += '<button class="btn btn-success">Submit</button>';
- html += '</div>';
-
-
-
- html += '</div>';
-
-
- $('#new_attribute').append(html);
- $("#addattributes").hide();
-
-});
-
-
-
-//show add Nested Attributs
-$(document).ready(function () {
-
-
-    $('#select_anotherz').on('change', function() {
-       alert("hello");
-       console.log("Chal jaaaaaaaaaaaaaaaaaa bhaiiiiiiiiiiiiii");
-
-});
-});
 </script>
-
-
-
