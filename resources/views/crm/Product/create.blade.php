@@ -257,11 +257,11 @@
 
         if ($("#productselection").val() == 0)
       {
-   
+
         $("#simpleproduct").show();
         $("#productvart").hide();
         $("#new_attribute").hide();
-        
+
 
       }
       else if($("#productselection").val() == 1)
@@ -274,7 +274,7 @@
 
       else if($("#productselection").val() == 2)
       {
-      
+
         $("#simpleproduct").show();
         $("#productvart").show();
         $("#new_attribute").show();
@@ -291,7 +291,7 @@
     var counterTwo = 0;
 $("#addattributes").click(function () {
     var html = '';
- 
+
 
     html += '<div class="col-md-11">';
     html += '<div class="row">';
@@ -349,7 +349,7 @@ $("#addattributes").click(function () {
     html += '<button class="btn btn-success">Submit</button>';
     html += '</div>';
 
- 
+
 
 
 
@@ -368,7 +368,7 @@ $("#addattributes").click(function () {
 
 
 
-   
+
 
 //select varients
 $("#select_varients").change(function(){
@@ -492,10 +492,23 @@ $(document).on('click', '#addattributes1', function() {
 });
 
 
-});
+
 //show add Nested Attributs
 
 
+$(document).on('change', '#select_anotherz', function() {
+
+    if($("#select_varients").val() == 0)
+  {
+    $("#addattributes1").hide();
+  }
+  else {
+
+
+   $("#addattributes1").attr( "style", "display: block !important;" )
+ 
+}
+});
 
 
 </script>
