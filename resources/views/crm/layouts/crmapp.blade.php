@@ -41,15 +41,11 @@
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom"><div id="navbarSupportedContent" class="collapse navbar-collapse"><ul class="navbar-nav ms-auto"><li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle show" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                     SYED ADIL SHAH<br>
                                     mohsin@gmail.com
-                              <a class="dropdown-item" href="{{ route('logout.perform') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                </a> <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right show" data-bs-popper="none"><a href="{{ route('logout.perform') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" class="dropdown-item">
+                                        bilal
+                                    </a> <form id="logout-form" action="{{ route('logout.perform') }}" method="POST" class="d-none"><input type="hidden" name="_token" value="2eYwBqQyTXoqFCDCBkvcW8k6iBu2dr1mrNuAegqf"></form></div></li></ul></div></nav></div>
 
-                                    <form id="logout-form" action="{{ route('logout.perform') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
 
 
 
