@@ -65,5 +65,9 @@ Route::resource('/subcategory',SubCategoryController::class);
 Route::resource('/product-attribute',ProductAttributeController::class);
 
 
-
-
+Route::group(['middleware' => ['auth']], function() {
+    /**
+    * Logout Route
+    */
+    Route::get('/logout', [App\Http\Controllers\LogoutController::class,'perform'])->name('logout.perform');
+ });
