@@ -10,7 +10,9 @@
   }
 
 /*     #####################  Mega Menu #####################################  */
-
+.main-app{
+    height: 100vh;
+}
 #navbar .lighting_menu {
     /* background-image: url("../images/lighting-bg-mega.png"); */
     background-image: url(../img/furnit.png) , url(../img/furnit1.png);
