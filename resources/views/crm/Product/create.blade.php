@@ -384,6 +384,20 @@ $("#select_varients").change(function(){
 }
 });
 
+$("#select_anotherz").change(function(){
+  
+  alert($(this).val());
+    if($("#select_anotherz").val() == 0)
+  {
+     
+    $("#addattributes1").hide();
+
+  }
+  else {
+   $("#addattributes1").show();
+}
+});
+
   });
 
 
@@ -395,16 +409,16 @@ $(document).on('click', '.add_attrs', function() {
     var html1 = '';
  
 
-html1 += '<div class="row mb-3" id="productvart" >';
+html1 += '<div class="row mb-3" id="" >';
 html1 += '<label for="title" class="col-md-4 col-form-label text-md-right">{{ __("Select Another Attribute") }}</label>';
 html1 += '<div class="col-md-6">';
-html1 += '<select class="category form-control" name="category_id" id="select_varients">';
+html1 += '<select class="category form-control" name="category_id" id="select_anotherz">';
 html1 += '<option value="0">Select Attributes</option>';
-html1 += '<option value="0">asd</option>';
+html1 += '<option value="1">asd</option>';
 html1 += '</select>';
 html1 += '</div>';
 html1 += '<div class="col-md-2">';
-html1 += '<button class="btn btn-primary" id="addattributes1" >Add Variations</button>';
+html1 += '<button class="btn btn-primary" id="addattributes1" style="display:none" >Add Variations</button>';
 html1 += '</div>';
 html1 += '</div>';
 
@@ -423,6 +437,7 @@ $(document).on('click', '#addattributes1', function() {
 
  html += '<div class="col-md-11">';
  html += '<div class="row">';
+ html += '<h2 class="text-center py-3">Add Variations</h2>';
  html += '<label for="Value" class="col-md-4 col-form-label text-md-right my-3">';
  html += '{{ __(" Value") }}';
  html += '</label>';
@@ -485,4 +500,14 @@ $(document).on('click', '#addattributes1', function() {
  $("#addattributes").hide();
 
 });
+
+
+
+//show add Nested Attributs
+$(document).ready(function () {
+
+});
 </script>
+
+
+
