@@ -400,7 +400,7 @@ $(document).on('click', '.add_attrs', function() {
 
 html1 += '<div class="row mb-3" id="" >';
 html1 += '<h2 class="text-center py-3">Add Attributes</h2>';
-html1 += '<label for="title" class="col-md-4 col-form-label text-md-right">{{ __("Select Another Attribute") }}</label>';
+html1 += '<label for="title" class="col-md-4 col-form-label text-md-right" >{{ __("Select Another Attribute") }}</label>';
 html1 += '<div class="col-md-6">';
 html1 += '<select class="category form-control" name="category_id" id="select_anotherz">';
 html1 += '<option value="0">Select Attributes</option>';
@@ -494,15 +494,15 @@ $(document).on('click', '#addattributes1', function() {
 
 
 //show add Nested Attributs
-$(document).ready(function () {
 
 
-    $('#select_anotherz').on('change', function() {
-       alert("hello");
-       console.log("Chal jaaaaaaaaaaaaaaaaaa bhaiiiiiiiiiiiiii");
+$(document).on('change', '#select_anotherz', function() {   
+
+alert("hello");
+console.log("Chal jaaaaaaaaaaaaaaaaaa bhaiiiiiiiiiiiiii");
 
 });
-});
+
 </script>
 
 
