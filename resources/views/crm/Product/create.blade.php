@@ -183,6 +183,7 @@
 
 
 <div class="row mb-3" id="productvart" style="display:none">
+<h2 class="text-center py-3">Add Attributes</h2>
     <label for="title" class="col-md-4 col-form-label text-md-right">{{ __('Select Attribute') }}</label>
 
     <div class="col-md-6">
@@ -384,19 +385,7 @@ $("#select_varients").change(function(){
 }
 });
 
-$("#select_anotherz").change(function(){
-  
-  alert($(this).val());
-    if($("#select_anotherz").val() == 0)
-  {
-     
-    $("#addattributes1").hide();
 
-  }
-  else {
-   $("#addattributes1").show();
-}
-});
 
   });
 
@@ -410,6 +399,7 @@ $(document).on('click', '.add_attrs', function() {
  
 
 html1 += '<div class="row mb-3" id="" >';
+html1 += '<h2 class="text-center py-3">Add Attributes</h2>';
 html1 += '<label for="title" class="col-md-4 col-form-label text-md-right">{{ __("Select Another Attribute") }}</label>';
 html1 += '<div class="col-md-6">';
 html1 += '<select class="category form-control" name="category_id" id="select_anotherz">';
@@ -437,7 +427,7 @@ $(document).on('click', '#addattributes1', function() {
 
  html += '<div class="col-md-11">';
  html += '<div class="row">';
- html += '<h2 class="text-center py-3">Add Variations</h2>';
+ html += '<h2 class="text-center py-3">Add Product Variations</h2>';
  html += '<label for="Value" class="col-md-4 col-form-label text-md-right my-3">';
  html += '{{ __(" Value") }}';
  html += '</label>';
@@ -506,6 +496,12 @@ $(document).on('click', '#addattributes1', function() {
 //show add Nested Attributs
 $(document).ready(function () {
 
+
+    $('#select_anotherz').on('change', function() {
+       alert("hello");
+       console.log("Chal jaaaaaaaaaaaaaaaaaa bhaiiiiiiiiiiiiii");
+
+});
 });
 </script>
 
