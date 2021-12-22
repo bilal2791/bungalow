@@ -496,10 +496,7 @@ $(document).on('click', '#addattributes1', function() {
 //show add Nested Attributs
 
 
-$(document).on('change', '#select_anotherz', function() {   
-alert("Hello");
 
-});
 
 </script>
 
