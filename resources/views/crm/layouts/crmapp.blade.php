@@ -28,7 +28,7 @@
 {{-- @include('includes.head'); --}}
 
 
- <div id="app">
+ <div id="app" class="main-app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand mx-auto" href="{{ url('/customer') }}" >
@@ -39,8 +39,7 @@
                 <div id="page-content-wrapper">
 
                 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom"><div id="navbarSupportedContent" class="collapse navbar-collapse"><ul class="navbar-nav ms-auto"><li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle show" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                    SYED ADIL SHAH<br>
-                                    mohsin@gmail.com
+                                    SYED ADIL SHAH
                                 </a> <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right show" data-bs-popper="none"><a href="http://127.0.0.1:8000/logout" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" class="dropdown-item">
                                         Logout
@@ -94,7 +93,7 @@
         $("#product_id").click(function(){
                 alert("The paragraph was clicked.");
               });
-              
+
 	  </script>
 </body>
 </html>
