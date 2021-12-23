@@ -233,12 +233,18 @@
 </div>
 
 
-  </div>
+<div class="row justify-content-center pb-3" id="new_attribute1" >
+
+</div>
 
 
+  <div class="row justify-content-center pb-3" id="add_attrz11">
+
+</div>
 
 
-
+  
+</div>
 
 
 </div>
@@ -425,6 +431,7 @@ $("#btn-dd").attr( "style", "display: none !important;" )
 $(document).on('click', '#addattributes1', function() {
 
 
+
     var html = '';
  
 
@@ -479,8 +486,8 @@ $(document).on('click', '#addattributes1', function() {
  html += '</div>';
 
 
- html += '<div class="col-md-12 d-flex justify-content-center">';
- html += '<button class="btn btn-primary add_attrs"  style="margin-right:10px">Add More Attributes</button>';
+ html += '<div class="col-md-12 d-flex justify-content-center" id="new_attrz_hide">';
+ html += '<button class="btn btn-primary " id="new_attrz" style="margin-right:10px">Add More Attributes</button>';
  html += '<button class="btn btn-success">Submit</button>';
  html += '</div>';
 
@@ -489,11 +496,40 @@ $(document).on('click', '#addattributes1', function() {
  html += '</div>';
 
 
- $('#new_attribute').append(html);
+ $('#new_attribute1').append(html);
  $("#addattributes").hide();
+ $("#addattributes1").attr( "style", "display: none !important;" )
 
 });
 
+
+
+$(document).on('click', '#new_attrz', function() {
+
+
+var html1 = '';
+
+
+html1 += '<div class="row mb-3" id="" >';
+html1 += '<h2 class="text-center py-3">Add Attributes</h2>';
+html1 += '<label for="title" class="col-md-4 col-form-label text-md-right" >{{ __("Select Another Attribute") }}</label>';
+html1 += '<div class="col-md-6">';
+html1 += '<select class="category form-control" name="category_id" id="select_anotherz">';
+html1 += '<option value="0">Select Attributes</option>';
+html1 += '<option value="1">asd</option>';
+html1 += '</select>';
+html1 += '</div>';
+html1 += '<div class="col-md-2">';
+html1 += '<button class="btn btn-primary" id="addattributes1" style="display:none" >Add Variations</button>';
+html1 += '</div>';
+html1 += '</div>';
+
+
+
+$('#add_attrz11').append(html1);
+$("#new_attrz_hide").attr( "style", "display: none !important;" )
+
+});
 
 
 //show add Nested Attributs
@@ -501,12 +537,15 @@ $(document).on('click', '#addattributes1', function() {
 
 $(document).on('change', '#select_anotherz', function() {
 
-    if($("#select_varients").val() == 0)
+
+    if($("#select_anotherz").val() == 0)
   {
-    $("#addattributes1").hide();
+
+
+    $("#addattributes1").attr( "style", "display: none " )
   }
   else {
-
+ 
 
    $("#addattributes1").attr( "style", "display: block !important;" )
  
@@ -514,6 +553,11 @@ $(document).on('change', '#select_anotherz', function() {
 });
 
 
+
+
+
+
+ 
 
 
 
