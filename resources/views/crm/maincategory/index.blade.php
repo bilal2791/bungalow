@@ -49,6 +49,12 @@
 
                 @endforeach
 
+                @if($mainCategory->isEmpty())
+                <tr>
+                        <td colspan="9" class="text-center p-3 mb-2 bg-danger text-white">No Record Found</td>
+                    </tr>
+                @endif
+
 
 
 
